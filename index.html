@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="conainer" style="display: flex;" >
+        <img src="./photo-1515378791036-0648a3ef77b2.jpg" style="height: 100vh; opacity: 0;" alt="">
+        <div id="load" style="display: flex; justify-content: center; align-items: center; font-size: 4rem; height: 100vh;">0%</div>
+    </div>
+
+    <script>
+      let load = document.getElementById("load");
+      let img = document.querySelector("img")
+      let a = 0;
+     let clear =  setInterval(animi,80);
+      function animi(){
+          a = a+1;
+         load.innerHTML = a + "%"; 
+         if(a >= 100){
+             clearInterval(clear)
+         }else if(a == 70){
+             load.style.opacity = 0.3;
+             img.style.opacity = 0.6;
+
+
+         }else if(a == 30){
+             load.style.opacity = 0.5;
+             img.style.opacity = 0.2;
+
+         }else if(a == 50){
+             load.style.opacity = 0.4;
+             img.style.opacity = 0.5;
+
+
+         }else if(a == 97){
+             load.style.opacity = 0;
+             img.style.opacity = 0.9;
+
+
+
+         }
+      }
+    </script>
+</body>
+</html>
